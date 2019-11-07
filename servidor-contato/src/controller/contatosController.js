@@ -6,13 +6,30 @@ const getAll = (request, response) => {
 };
 
 const add = (request, response) => {
-
-  model.agenda.contatos.push(request.body)
+  let contato = request.body
+  contato.id = Math.random().toString(36).substr(-8)
+  model.agenda.contatos.push(contato)
   response.status(200).send()
+}
+
+const compararAdd = (request, response) => {
+  
+  const dado = model.contatos.findindex(dado => request.agenda.nome == request.body.nome)
+
+  if (dado == true) {
+    return response.status(500).send(dado)
+
+  } else {
+  
+    require.body.id = Math.random().toString(36).substr(-8)
+    model.agenda.contatos.push(require.body)
+
+    return response.status(200).send(dado)
+  }
 }
 
 module.exports = {
   getAll,
+  compararAdd,
   add
 }
-
