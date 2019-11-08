@@ -13,18 +13,19 @@ const add = (request, response) => {
 }
 
 const compararAdd = (request, response) => {
-  
-  const dado = model.contatos.findindex(dado => request.agenda.nome == request.body.nome)
+  let contato = request.body
+  let baseDados = model.agenda.contatos
+  contato.id = Math.random().toString(36).substr(-8)
 
-  if (dado == true) {
-    return response.status(500).send(dado)
-
+  if (!contato.nome || !contato.dataNascimento || !contato.celular) {
+    response.status(400).send("Dados inválidos");
   } else {
-  
-    require.body.id = Math.random().toString(36).substr(-8)
-    model.agenda.contatos.push(require.body)
-
-    return response.status(200).send(dado)
+    if (baseDados.find(dado => dado.nome === contato.nome)) {
+      response.status(400).send("Contato já cadastrado")
+    } else {
+      model.agenda.contatos.push(contato)
+      response.status(201).send(contato)
+    }
   }
 }
 
