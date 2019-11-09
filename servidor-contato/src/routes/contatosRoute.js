@@ -8,5 +8,4 @@ router.post("/buscar/criar", bodyParser.json(),controller.compararAdd)
 router.post("/criar", bodyParser.json(),controller.add)
 
 
-
 module.exports = router
