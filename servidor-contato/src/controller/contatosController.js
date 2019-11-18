@@ -34,7 +34,7 @@ function verificarSigno(data) {
 
   const dataNasc = new Date(
     data.split("/")[2],
-    data.split("/")[1]-1,
+    data.split("/")[1],
     data.split("/")[0]
   )
   
@@ -47,16 +47,20 @@ function verificarSigno(data) {
   }else if (dataNasc >= (new Date(dataNasc.getFullYear(),6,22)) && dataNasc <= (new Date(dataNasc.getFullYear(),7,22))) {
     return "Câncer"
   }else if (dataNasc >= (new Date(dataNasc.getFullYear(),7,23)) && dataNasc <= (new Date(dataNasc.getFullYear(),8,22))) {
-    return "Virgem"
+    return "Leão"
   }else if (dataNasc >= (new Date(dataNasc.getFullYear(),8,23)) && dataNasc <= (new Date(dataNasc.getFullYear(),9,22))) {
+    return "Virgem"
+  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),9,23)) && dataNasc <= (new Date(dataNasc.getFullYear(),10,22))) {
     return "Libra"
-  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),9,23)) && dataNasc <= (new Date(dataNasc.getFullYear(),10,21))) {
+  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),10,23)) && dataNasc <= (new Date(dataNasc.getFullYear(),11,21))) {
     return "Escorpião"
-  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),10,22)) && dataNasc <= (new Date(dataNasc.getFullYear(),11,21))) {
+  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),11,22)) && dataNasc <= (new Date(dataNasc.getFullYear(),12,21))) {
     return "Sagitario"
-  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),11,22)) && dataNasc <= (new Date(dataNasc.getFullYear(),12,1))) {
+  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),12,22)) && dataNasc <= (new Date(dataNasc.getFullYear(),1,19))) {
     return "Capricórnio"
-  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),2,21)) && dataNasc <= (new Date(dataNasc.getFullYear(),2,21))) {
+  }else if (dataNasc >= (new Date(dataNasc.getFullYear(),1,20)) && dataNasc <= (new Date(dataNasc.getFullYear(),2,18))) {
+    return "Aquário"
+  }else{
     return "Peixes"
   }
 }
